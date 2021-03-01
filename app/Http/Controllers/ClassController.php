@@ -15,6 +15,12 @@ class ClassController extends Controller
         return view('class.index', compact('classes'));
     }
 
+    public function show($id)
+    {
+        $class = Group::find($id);
+        return view('class.show', compact('class'));
+    }
+
     public function new()
     {
         $courses = Course::all();

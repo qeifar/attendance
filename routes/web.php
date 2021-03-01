@@ -34,6 +34,7 @@ Route::middleware(['auth'])->group(function () {
 
     // CLASS
     Route::get('/class', [App\Http\Controllers\ClassController::class, 'index'])->name('class.index');
+    Route::get('/class/show/{id}', [App\Http\Controllers\ClassController::class, 'show'])->name('class.show');
     Route::get('/class/new', [App\Http\Controllers\ClassController::class, 'new'])->name('class.new');
     Route::post('/class/create', [App\Http\Controllers\ClassController::class, 'create'])->name('class.create');
     Route::post('/class/delete/{id}', [App\Http\Controllers\ClassController::class, 'delete'])->name('class.delete');
