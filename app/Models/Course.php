@@ -9,6 +9,8 @@ class Course extends Model
 {
     use HasFactory;
 
+    protected $table = "courses";
+
     protected $fillable = [
         'name',
     ];
@@ -25,6 +27,6 @@ class Course extends Model
 
     public function students()
     {
-        return $this->hasMany(Student::class);
+        return $this->belongsToMany(Student::class, 'student_courses');
     }
 }

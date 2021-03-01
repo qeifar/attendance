@@ -36,23 +36,18 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>Course</th>
-                                <td>
-                                    <select name="course_id" class="form-control">
-                                        @foreach ($courses as $course)
-                                            <option value="{{ $course->id }}">{{ $course->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
                                 <th>Class</th>
                                 <td>
-                                    <select name="group_id" class="form-control">
-                                        @foreach ($groups as $class)
-                                            <option value="{{ $class->id }}">{{ $class->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    @foreach ($courses as $course)
+                                        {{ $course->name }} <br>
+                                        <ul>
+                                            @foreach ($course->groups as $class)
+                                                <li style="list-style-type: none;">
+                                                    <input type="checkbox" name="group_id[]" value="{{ $class->id }}"> {{ $class->name }} <br>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endforeach
                                 </td>
                             </tr>
                         </table>

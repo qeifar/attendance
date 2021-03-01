@@ -20,7 +20,6 @@
                                 <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Facebook URL</th>
-                                <th>Course</th>
                                 <th>Class</th>
                                 <th></th>
                             </tr>
@@ -37,11 +36,14 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('course.show', ['id' => $student->course->id]) }}">
-                                            {{ $student->course->name }}
-                                        </a>
+                                        <ul>
+                                            @foreach ($student->groups as $class)
+                                                <li>
+                                                    {{ $class->name }} ( {{ $class->course->name }} )
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </td>
-                                    <td>{{ $student->group->name }}</td>
                                     <td>
                                         <a href="#" class="btn btn-danger" onclick="document.getElementById('student_{{$student->id}}').click()">Delete</a>
                                         <form action="{{ route('student.delete', ['id' => $student->id]) }}" method="POST">
