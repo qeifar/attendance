@@ -9,7 +9,7 @@ class CourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::with('users', 'groups')->get();
+        $courses = Course::with('users', 'groups', 'students')->get();
         return view('course.index', compact('courses'));   
     }
 

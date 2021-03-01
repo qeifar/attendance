@@ -19,6 +19,7 @@
                                 <th>Name</th>
                                 <th>Instructor Count</th>
                                 <th>Class Count</th>
+                                <th>Student Count</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,7 @@
                                     <td>{{ $course->name }}</td>
                                     <td>{{ count($course->users) }}</td>
                                     <td>{{ count($course->groups) }}</td>
+                                    <td>{{ count($course->students) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
