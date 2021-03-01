@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">User</div>
+                <div class="card-header">
+                    User
+                    <span class="float-right">
+                        <a href="{{ route('user.new') }}" class="btn btn-primary">NEW</a>
+                    </span>
+                </div>
 
                 <div class="card-body">
                     <table class="table">
