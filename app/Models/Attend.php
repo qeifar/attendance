@@ -14,4 +14,14 @@ class Attend extends Model
         'group_id',
         'attend',
     ];
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
+    }
 }
