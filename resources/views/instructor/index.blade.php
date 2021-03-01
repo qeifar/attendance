@@ -27,7 +27,11 @@
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->course->name }}</td>
+                                    <td>
+                                        <a href="{{ route('course.show', ['id' => $user->course->id]) }}">
+                                            {{ $user->course->name }}
+                                        </a>
+                                    </td>
                                     <td>
                                         <a href="#" class="btn btn-danger" onclick="document.getElementById('user_{{$user->id}}').click()">Delete</a>
                                         <form action="{{ route('instructor.delete', ['id' => $user->id]) }}" method="POST">

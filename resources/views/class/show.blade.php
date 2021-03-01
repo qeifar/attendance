@@ -15,7 +15,11 @@
                         </tr>
                         <tr>
                             <th>Course</th>
-                            <td>{{ $class->course->name }}</td>
+                            <td>
+                                <a href="{{ route('course.show', ['id' => $class->course->id]) }}">
+                                    {{ $class->course->name }}
+                                </a>
+                            </td>
                         </tr>
                         <tr>
                             <th>Instructor</th>

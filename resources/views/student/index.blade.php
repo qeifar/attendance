@@ -39,7 +39,12 @@
                                         <ul>
                                             @foreach ($student->groups as $class)
                                                 <li>
-                                                    {{ $class->name }} ( {{ $class->course->name }} )
+                                                    <a href="{{ route('class.show', ['id' => $class->id]) }}">{{ $class->name }}</a>
+                                                    ( 
+                                                        <a href="{{ route('course.show', ['id' => $class->course->id]) }}">
+                                                            {{ $class->course->name }}
+                                                        </a> 
+                                                    )
                                                 </li>
                                             @endforeach
                                         </ul>

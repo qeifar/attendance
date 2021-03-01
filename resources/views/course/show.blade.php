@@ -28,7 +28,9 @@
                             <td>
                                 <ul>
                                     @foreach ($course->groups as $class)
-                                        <li>{{ $class->name }}</li>
+                                        <li>
+                                            <a href="{{ route('class.show', ['id' => $class->id]) }}">{{ $class->name }}</a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </td>
