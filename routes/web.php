@@ -40,4 +40,6 @@ Route::middleware(['auth'])->group(function () {
 
     // STUDENT
     Route::get('/student', [App\Http\Controllers\StudentController::class, 'index'])->name('student.index');
+    Route::get('/student/new', [App\Http\Controllers\StudentController::class, 'new'])->name('student.new');
+    Route::post('/student/create', [App\Http\Controllers\StudentController::class, 'create'])->name('student.create');
 });
