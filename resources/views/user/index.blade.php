@@ -19,6 +19,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Course</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,13 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->course->name }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger" onclick="document.getElementById('user_{{$user->id}}').click()">Delete</a>
+                                        <form action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST">
+                                            @csrf
+                                            <input type="submit" id="user_{{$user->id}}" style="display: none;">
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

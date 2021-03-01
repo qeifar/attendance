@@ -28,4 +28,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
     Route::get('/user/new', [App\Http\Controllers\UserController::class, 'new'])->name('user.new');
     Route::post('/user/create', [App\Http\Controllers\UserController::class, 'create'])->name('user.create');
+    Route::post('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('user.delete');
 });
