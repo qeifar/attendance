@@ -24,6 +24,18 @@ class StudentController extends Controller
 
     public function create(Request $request)
     {
-        return $request;
+        $student = Student::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_no' => $request->phone_no,
+            'facebook' => $request->facebook,
+            'course_id' => $request->course_id,
+            'group_id' => $request->group_id,
+        ]);
+        if($student) {
+            return redirect()->route('student.index');
+        }else {
+            return redirect()->back();
+        }
     }
 }
