@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/course', [App\Http\Controllers\CourseController::class, 'index'])->name('course.index');
     Route::get('/course/new', [App\Http\Controllers\CourseController::class, 'new'])->name('course.new');
     Route::post('/course/create', [App\Http\Controllers\CourseController::class, 'create'])->name('course.create');
+    Route::post('/course/delete/{id}', [App\Http\Controllers\CourseController::class, 'delete'])->name('course.delete');
 
     // USER
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');

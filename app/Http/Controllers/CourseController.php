@@ -28,4 +28,22 @@ class CourseController extends Controller
             return redirect()->back();
         }
     }
+
+    public function delete($id)
+    {
+        $course = Course::with('users', 'groups', 'students')->find($id);
+        if(
+            count($course->users) == 0 &&
+            count($course->groups) == 0 &&
+            count($course->students) == 0
+        ) {
+            if($course->delete()) {
+                return redirect()->route('course.index');
+            }else {
+                return redirect()->back();
+            }
+        }else {
+            return redirect()->back();
+        }
+    }
 }
