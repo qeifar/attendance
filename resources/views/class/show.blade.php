@@ -26,7 +26,7 @@
                             <td>{{ $class->user->name }}</td>
                         </tr>
                         <tr>
-                            <th>Student List ( {{ count($class->students) }} ) </th>
+                            <th>Student List ({{ count($class->students) }}) </th>
                             <td>
                                 <ul>
                                     @foreach ($class->students as $student)

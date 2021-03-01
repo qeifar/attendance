@@ -14,7 +14,7 @@
                             <td>{{ $course->name }}</td>
                         </tr>
                         <tr>
-                            <th>Instructor</th>
+                            <th>Instructor List ({{ count($course->users) }})</th>
                             <td>
                                 <ul>
                                     @foreach ($course->users as $user)
@@ -24,7 +24,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Class</th>
+                            <th>Class List ({{ count($course->groups) }})</th>
                             <td>
                                 <ul>
                                     @foreach ($course->groups as $class)
@@ -36,7 +36,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Student</th>
+                            <th>Student List ({{ count($course->students) }})</th>
                             <td>
                                 <ul>
                                     @foreach ($course->students as $student)
