@@ -13,6 +13,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Course</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -20,6 +21,7 @@
                                 <tr>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>{{ $user->course->name }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

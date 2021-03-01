@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::with('course')->get();
         return view('user.index', compact('users'));
     }
 }
