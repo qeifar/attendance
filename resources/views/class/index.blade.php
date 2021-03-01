@@ -19,6 +19,7 @@
                                 <th>Class Name</th>
                                 <th>Course</th>
                                 <th>Student Count</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,15 @@
                                     <td>{{ $class->name }}</td>
                                     <td>{{ $class->course->name }}</td>
                                     <td>{{ count($class->students) }}</td>
+                                    <td>
+                                        @if (count($class->students) == 0)
+                                            <a href="#" class="btn btn-danger" onclick="document.getElementById('class_{{$class->id}}').click()">Delete</a>
+                                            <form action="{{ route('class.delete', ['id' => $class->id]) }}" method="POST">
+                                                @csrf
+                                                <input type="submit" id="class_{{$class->id}}" style="display: none;">
+                                            </form>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

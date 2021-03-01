@@ -32,4 +32,18 @@ class ClassController extends Controller
             return redirect()->back();
         }
     }
+
+    public function delete($id)
+    {
+        $class = Group::with('course', 'students')->find($id);
+        if(count($class->students) == 0) {
+            if($class->delete()) {
+                return redirect()->route('class.index');
+            }else {
+                return redirect()->back();
+            }
+        }else {
+            return redirect()->back();
+        }
+    }
 }
