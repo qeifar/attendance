@@ -17,6 +17,11 @@ class Student extends Model
         'group_id',
     ];
 
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
     public function group()
     {
         return $this->belongsTo(Group::class);
