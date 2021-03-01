@@ -18,6 +18,7 @@
                             <tr>
                                 <th>Class Name</th>
                                 <th>Course</th>
+                                <th>User In Charge</th>
                                 <th>Student Count</th>
                                 <th></th>
                             </tr>
@@ -26,7 +27,12 @@
                             @foreach ($classes as $class)
                                 <tr>
                                     <td>{{ $class->name }}</td>
-                                    <td>{{ $class->course->name }}</td>
+                                    <td>
+                                        <a href="{{ route('course.show', ['id' => $class->course->id]) }}">
+                                            {{ $class->course->name }}
+                                        </a>
+                                    </td>
+                                    <td>{{ $class->user->name }}</td>
                                     <td>{{ count($class->students) }}</td>
                                     <td>
                                         @if (count($class->students) == 0)

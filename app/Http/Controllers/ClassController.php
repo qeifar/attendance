@@ -11,7 +11,7 @@ class ClassController extends Controller
 {
     public function index()
     {
-        $classes = Group::with('course', 'students')->get();
+        $classes = Group::with('course', 'students', 'user')->get();
         return view('class.index', compact('classes'));
     }
 
