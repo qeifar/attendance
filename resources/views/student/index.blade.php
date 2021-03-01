@@ -44,7 +44,7 @@
                                     <td>{{ $student->group->name }}</td>
                                     <td>
                                         <a href="#" class="btn btn-danger" onclick="document.getElementById('student_{{$student->id}}').click()">Delete</a>
-                                        <form action="{{ route('class.delete', ['id' => $student->id]) }}" method="POST">
+                                        <form action="{{ route('student.delete', ['id' => $student->id]) }}" method="POST">
                                             @csrf
                                             <input type="submit" id="student_{{$student->id}}" style="display: none;">
                                         </form>

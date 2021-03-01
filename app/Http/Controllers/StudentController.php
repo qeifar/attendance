@@ -38,4 +38,14 @@ class StudentController extends Controller
             return redirect()->back();
         }
     }
+
+    public function delete($id)
+    {
+        $student = Student::find($id);
+        if($student->delete()) {
+            return redirect()->route('student.index');
+        }else {
+            return redirect()->back();
+        }
+    }
 }

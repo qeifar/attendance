@@ -42,4 +42,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/student', [App\Http\Controllers\StudentController::class, 'index'])->name('student.index');
     Route::get('/student/new', [App\Http\Controllers\StudentController::class, 'new'])->name('student.new');
     Route::post('/student/create', [App\Http\Controllers\StudentController::class, 'create'])->name('student.create');
+    Route::post('/student/delete/{id}', [App\Http\Controllers\StudentController::class, 'delete'])->name('student.delete');
 });
