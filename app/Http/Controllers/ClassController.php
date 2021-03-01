@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Group;
+use App\Models\Course;
 
 class ClassController extends Controller
 {
@@ -11,5 +12,24 @@ class ClassController extends Controller
     {
         $classes = Group::with('course', 'students')->get();
         return view('class.index', compact('classes'));
+    }
+
+    public function new()
+    {
+        $courses = Course::all();
+        return view('class.new', compact('courses'));
+    }
+
+    public function create(Request $request)
+    {
+        $class = Group::create([
+            'name' => $request->name,
+            'course_id' => $request->course_id,
+        ]);
+        if($class) {
+            return redirect()->route('class.index');
+        }else {
+            return redirect()->back();
+        }
     }
 }

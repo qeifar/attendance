@@ -8,7 +8,7 @@
                 <div class="card-header">
                     Class
                     <span class="float-right">
-                        <a href="{{ route('course.new') }}" class="btn btn-primary">NEW</a>
+                        <a href="{{ route('class.new') }}" class="btn btn-primary">NEW</a>
                     </span>
                 </div>
 
