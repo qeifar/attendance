@@ -18,7 +18,7 @@
                             <tr>
                                 <th>Class Name</th>
                                 <th>Course</th>
-                                <th>User In Charge</th>
+                                <th>Instructor</th>
                                 <th>Student Count</th>
                                 <th></th>
                             </tr>

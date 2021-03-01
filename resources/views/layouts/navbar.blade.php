@@ -21,7 +21,7 @@
                         <a class="nav-link" href="{{ route('class.index') }}">Class</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.index') }}">User</a>
+                        <a class="nav-link" href="{{ route('instructor.index') }}">Instructor</a>
                     </li>
                 @endauth
             </ul>

@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">New User</div>
+                <div class="card-header">New Instructor</div>
 
                 <div class="card-body">
-                    <form action="{{ route('user.create') }}" method="POST">
+                    <form action="{{ route('instructor.create') }}" method="POST">
                         @csrf
                         <table class="table">
                             <tr>

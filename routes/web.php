@@ -27,10 +27,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/course/delete/{id}', [App\Http\Controllers\CourseController::class, 'delete'])->name('course.delete');
 
     // USER
-    Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
-    Route::get('/user/new', [App\Http\Controllers\UserController::class, 'new'])->name('user.new');
-    Route::post('/user/create', [App\Http\Controllers\UserController::class, 'create'])->name('user.create');
-    Route::post('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('user.delete');
+    Route::get('/instructor', [App\Http\Controllers\UserController::class, 'index'])->name('instructor.index');
+    Route::get('/instructor/new', [App\Http\Controllers\UserController::class, 'new'])->name('instructor.new');
+    Route::post('/instructor/create', [App\Http\Controllers\UserController::class, 'create'])->name('instructor.create');
+    Route::post('/instructor/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('instructor.delete');
 
     // CLASS
     Route::get('/class', [App\Http\Controllers\ClassController::class, 'index'])->name('class.index');

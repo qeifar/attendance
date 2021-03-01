@@ -6,9 +6,9 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    User
+                    Instructor
                     <span class="float-right">
-                        <a href="{{ route('user.new') }}" class="btn btn-primary">NEW</a>
+                        <a href="{{ route('instructor.new') }}" class="btn btn-primary">NEW</a>
                     </span>
                 </div>
 
@@ -30,7 +30,7 @@
                                     <td>{{ $user->course->name }}</td>
                                     <td>
                                         <a href="#" class="btn btn-danger" onclick="document.getElementById('user_{{$user->id}}').click()">Delete</a>
-                                        <form action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST">
+                                        <form action="{{ route('instructor.delete', ['id' => $user->id]) }}" method="POST">
                                             @csrf
                                             <input type="submit" id="user_{{$user->id}}" style="display: none;">
                                         </form>

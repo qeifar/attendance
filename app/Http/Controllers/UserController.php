@@ -12,13 +12,13 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('course')->get();
-        return view('user.index', compact('users'));
+        return view('instructor.index', compact('users'));
     }
 
     public function new()
     {
         $courses = Course::all();
-        return view('user.new', compact('courses'));
+        return view('instructor.new', compact('courses'));
     }
 
     public function create(Request $request)
@@ -31,7 +31,7 @@ class UserController extends Controller
                 'course_id' => $request->course_id,
             ]);
             if($user) {
-                return redirect()->route('user.index');
+                return redirect()->route('instructor.index');
             }else {
                 return redirect()->back();
             }
@@ -44,7 +44,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if($user->delete()) {
-            return redirect()->route('user.index');
+            return redirect()->route('instructor.index');
         }else {
             return redirect()->back();
         }

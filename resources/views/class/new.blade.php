@@ -28,7 +28,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>User</th>
+                                <th>Instructor</th>
                                 <td>
                                     <select name="user_id" class="form-control">
                                         @foreach ($users as $user)
