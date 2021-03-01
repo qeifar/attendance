@@ -13,7 +13,7 @@
                 <li class="nav-item">
                     @auth
                         <a class="nav-link" href="{{ route('dashboard.index') }}">Dashboard</a>
-                    @endguest
+                    @endauth
                 </li>
             </ul>
 
