@@ -13,6 +13,12 @@ class CourseController extends Controller
         return view('course.index', compact('courses'));   
     }
 
+    public function show($id)
+    {
+        $course = Course::with('users', 'groups', 'students')->find($id);
+        return view('course.show', compact('course'));
+    }
+
     public function new()
     {
         return view('course.new');

@@ -26,7 +26,11 @@
                         <tbody>
                             @foreach ($courses as $course)
                                 <tr>
-                                    <td>{{ $course->name }}</td>
+                                    <td>
+                                        <a href="{{ route('course.show', ['id' => $course->id]) }}">
+                                            {{ $course->name }}
+                                        </a>
+                                    </td>
                                     <td>{{ count($course->users) }}</td>
                                     <td>{{ count($course->groups) }}</td>
                                     <td>{{ count($course->students) }}</td>
