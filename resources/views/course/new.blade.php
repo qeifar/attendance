@@ -13,7 +13,7 @@
                         Course Name: <br>
                         <input type="text" name="name" class="form-control">
                         <hr>
-                        <input type="submit" value="Create" class="form-control btn btn-primary" name="create">
+                        <input type="submit" value="Create" class="form-control btn btn-primary">
                     </form>
                 </div>
             </div>

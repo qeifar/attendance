@@ -17,4 +17,15 @@ class CourseController extends Controller
     {
         return view('course.new');
     }
+
+    public function create(Request $request)
+    {
+        $course = new Course();
+        $course->name = $request->name;
+        if($course->save()) {
+            return redirect()->route('course.index');
+        }else {
+            return redirect()->back();
+        }
+    }
 }
