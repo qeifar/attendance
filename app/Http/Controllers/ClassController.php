@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Group;
 use App\Models\Course;
+use App\Models\User;
 
 class ClassController extends Controller
 {
@@ -17,7 +18,8 @@ class ClassController extends Controller
     public function new()
     {
         $courses = Course::all();
-        return view('class.new', compact('courses'));
+        $users = User::all();
+        return view('class.new', compact('courses', 'users'));
     }
 
     public function create(Request $request)
@@ -25,6 +27,7 @@ class ClassController extends Controller
         $class = Group::create([
             'name' => $request->name,
             'course_id' => $request->course_id,
+            'user_id' => $request->user_id,
         ]);
         if($class) {
             return redirect()->route('class.index');

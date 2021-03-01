@@ -27,6 +27,16 @@
                                     </select>
                                 </td>
                             </tr>
+                            <tr>
+                                <th>User</th>
+                                <td>
+                                    <select name="user_id" class="form-control">
+                                        @foreach ($users as $user)
+                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                            </tr>
                         </table>
                         <input type="submit" value="Create" class="btn btn-primary form-control">
                     </form>

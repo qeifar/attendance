@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyColumnInStudents extends Migration
+class AddForeignKeyColumnInGroups extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddForeignKeyColumnInStudents extends Migration
      */
     public function up()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->foreignId('course_id')->after('facebook')->constrained();
+        Schema::table('groups', function (Blueprint $table) {
+            $table->foreignId('user_id')->after('name')->constrained();
         });
     }
 
@@ -25,8 +25,8 @@ class AddForeignKeyColumnInStudents extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->dropColumn('course_id');
+        Schema::table('groups', function (Blueprint $table) {
+            $table->dropColumn('user_id');
         });
     }
 }
