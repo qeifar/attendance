@@ -17,7 +17,7 @@
                             </tr>
                             <tr>
                                 <th>Time</th>
-                                <td><input type="time" name="time" class="form-control" value="{{ date('H:i') }}"></td>
+                                <td><input type="time" name="time" class="form-control" value="{{ date('H:i', strtotime($class->time)) }}"></td>
                             </tr>
                             <tr>
                                 <th>Student List</th>

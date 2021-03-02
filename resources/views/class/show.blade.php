@@ -14,6 +14,10 @@
                             <td>{{ $class->name }}</td>
                         </tr>
                         <tr>
+                            <th>Day & Time</th>
+                            <td>{{ $class->day }} ({{ date('H:i a', strtotime($class->time)) }})</td>
+                        </tr>
+                        <tr>
                             <th>Course</th>
                             <td>
                                 <a href="{{ route('course.show', ['id' => $class->course->id]) }}">

@@ -17,6 +17,7 @@
                         <thead>
                             <tr>
                                 <th>Class Name</th>
+                                <th>Day & Time</th>
                                 <th>Course</th>
                                 <th>Instructor</th>
                                 <th>Student Count</th>
@@ -29,6 +30,7 @@
                                     <td>
                                         <a href="{{ route('class.show', ['id' => $class->id]) }}">{{ $class->name }}</a>
                                     </td>
+                                    <td>{{ $class->day }} ({{ date('H:i a', strtotime($class->time)) }})</td>
                                     <td>
                                         <a href="{{ route('course.show', ['id' => $class->course->id]) }}">
                                             {{ $class->course->name }}

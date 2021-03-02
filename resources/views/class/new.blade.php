@@ -18,6 +18,26 @@
                                 </td>
                             </tr>
                             <tr>
+                                <th>Day</th>
+                                <td>
+                                    <select name="day" class="form-control">
+                                        <option value="Monday">Monday</option>
+                                        <option value="Tuesday">Tuesday</option>
+                                        <option value="Wednesday">Wednesday</option>
+                                        <option value="Thursday">Thursday</option>
+                                        <option value="Friday">Friday</option>
+                                        <option value="Saturday">Saturday</option>
+                                        <option value="Sunday">Sunday</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Time</th>
+                                <td>
+                                    <input type="time" name="time" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
                                 <th>Course</th>
                                 <td>
                                     <select name="course_id" class="form-control">

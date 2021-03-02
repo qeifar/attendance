@@ -33,6 +33,8 @@ class ClassController extends Controller
         $class = Group::create([
             'name' => $request->name,
             'course_id' => $request->course_id,
+            'day' => $request->day,
+            'time' => $request->time,
             'user_id' => $request->user_id,
         ]);
         if($class) {
