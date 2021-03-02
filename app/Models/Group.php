@@ -31,4 +31,9 @@ class Group extends Model
     {
         return $this->belongsToMany(Student::class, 'student_groups');
     }
+
+    public function attends()
+    {
+        return $this->hasMany(Attend::class);
+    }
 }

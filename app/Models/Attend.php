@@ -15,13 +15,13 @@ class Attend extends Model
         'attend',
     ];
 
-    public function students()
+    public function student()
     {
-        return $this->hasMany(Student::class);
+        return $this->belongsTo(Student::class);
     }
 
-    public function groups()
+    public function group()
     {
-        return $this->hasMany(Group::class);
+        return $this->belongsTo(Group::class);
     }
 }

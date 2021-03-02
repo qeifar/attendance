@@ -49,4 +49,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/attendance', [App\Http\Controllers\AttendController::class, 'index'])->name('attend.index');
     Route::get('/attendance/class/{id}', [App\Http\Controllers\AttendController::class, 'class'])->name('attend.class');
     Route::get('/attendance/class/{id}/new', [App\Http\Controllers\AttendController::class, 'new'])->name('attend.new');
+    Route::post('/attendance/class/{id}/create', [App\Http\Controllers\AttendController::class, 'create'])->name('attend.create');
 });

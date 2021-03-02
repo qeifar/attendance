@@ -8,7 +8,7 @@
                 <div class="card-header">Class {{ $class->name }} attendance</div>
 
                 <div class="card-body">
-                    <form action="#" method="POST">
+                    <form action="{{ route('attend.create', ['id' => $class->id]) }}" method="POST">
                         @csrf
                         <table class="table">
                             <tr>
@@ -26,7 +26,7 @@
                                         @foreach ($class->students as $student)
                                             <tr>
                                                 <td style="width: 20px">
-                                                    <input type="checkbox" name="attend[{{ $student->id }}]">
+                                                    <input type="checkbox" name="student[{{ $student->id }}]">
                                                 </td>
                                                 <td>{{ $student->name }}</td>
                                             </tr>
