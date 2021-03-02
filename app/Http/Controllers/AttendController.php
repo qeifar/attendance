@@ -17,9 +17,21 @@ class AttendController extends Controller
     public function class($id)
     {
         $class = Group::find($id);
-        // $attends = Attend::with('student')->orderBy('class_time', 'DESC')->get();
         $byDateTime = Attend::select('class_time')->where('group_id', $id)->groupBy('class_time')->orderBy('class_time', 'DESC')->get();
         return view('attend.class', compact('class', 'byDateTime'));
+    }
+
+    public function show($id, $datetime)
+    {
+        $class = Group::find($id);
+        $attends = Attend::with('student')->where('group_id', $id)->where('class_time', $datetime)->get();
+        $total = 0;
+        foreach ($attends as $attend) {
+            if($attend->attend) {
+                $total++;
+            }
+        }
+        return view('attend.show', compact('attends', 'datetime', 'class', 'total'));
     }
 
     public function new($id)

@@ -17,7 +17,12 @@
                         @foreach ($byDateTime as $dateTime)
                             <tr>
                                 <td>
-                                    <a href="#">{{ date('d M Y (H:i a)', strtotime($dateTime->class_time)) }}</a>
+                                    <a href="{{ route('attend.show', [
+                                        'id' => $class->id,
+                                        'datetime' => $dateTime->class_time,
+                                    ]) }}">
+                                        {{ date('d M Y (H:i a)', strtotime($dateTime->class_time)) }}
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
