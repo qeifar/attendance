@@ -14,7 +14,7 @@
                                 @if ($class->course->id == auth()->user()->course_id)
                                     <tr>
                                         <td>
-                                            <a href="#">{{ $class->name }}</a>
+                                            <a href="{{ route('attend.class', ['id' => $class->id]) }}">{{ $class->name }}</a>
                                         </td>
                                     </tr>
                                 @endif
