@@ -21,4 +21,10 @@ class AttendController extends Controller
         // return $attends;
         return view('attend.class', compact('class'));
     }
+
+    public function new($id)
+    {
+        $class = Group::with('students')->find($id);
+        return view('attend.new', compact('class'));
+    }
 }

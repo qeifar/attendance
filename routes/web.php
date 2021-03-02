@@ -48,4 +48,5 @@ Route::middleware(['auth'])->group(function () {
     // ATTENDANCE
     Route::get('/attendance', [App\Http\Controllers\AttendController::class, 'index'])->name('attend.index');
     Route::get('/attendance/class/{id}', [App\Http\Controllers\AttendController::class, 'class'])->name('attend.class');
+    Route::get('/attendance/class/{id}/new', [App\Http\Controllers\AttendController::class, 'new'])->name('attend.new');
 });

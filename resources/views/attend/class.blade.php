@@ -7,6 +7,9 @@
             <div class="card">
                 <div class="card-header">
                     Class {{ $class->name }} attendance
+                    <span class="float-right">
+                        <a href="{{ route('attend.new', ['id' => $class->id]) }}" class="btn btn-primary">NEW</a>
+                    </span>
                 </div>
 
                 <div class="card-body">
